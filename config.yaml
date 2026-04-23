@@ -1,0 +1,82 @@
+project:
+  name: polymarket_btc_5m_research
+  seed: 42
+  timezone: UTC
+
+paths:
+  raw_dir: outputs/stage1
+  stage_dir: outputs
+  logs_dir: outputs/logs
+
+apis:
+  polymarket_markets_url: "https://gamma-api.polymarket.com/markets"
+  polymarket_trades_url: "https://clob.polymarket.com/trades"
+  polymarket_prices_url: "https://clob.polymarket.com/prices-history"
+  polymarket_book_url: "https://clob.polymarket.com/book"
+  chainlink_btc_stream_url: "https://data.chain.link/feeds"
+  coinbase_candles_url: "https://api.exchange.coinbase.com/products/BTC-USD/candles"
+  cmc_fear_greed_latest_url: "https://pro-api.coinmarketcap.com/v3/fear-and-greed/latest"
+  cmc_fear_greed_historical_url: "https://pro-api.coinmarketcap.com/v3/fear-and-greed/historical"
+  pmxt_url: "https://api.pmxt.io/v1/polymarket/orderbooks"
+
+api_params:
+  markets:
+    limit: 1000
+    offset: 0
+    active: false
+    closed: true
+    archived: false
+  trades:
+    limit: 1000
+    offset: 0
+  prices:
+    interval: "1m"
+    fidelity: 1
+  cmc_historical:
+    limit: 5000
+    start: 1
+  cmc_latest:
+    convert: "USD"
+
+staleness:
+  btc_seconds: 120
+  trade_seconds: 120
+  snapshot_seconds: 3600
+
+splits:
+  train_ratio: 0.6
+  validation_ratio: 0.2
+  test_ratio: 0.2
+
+buckets:
+  price_tiers: [0.75, 0.8, 0.85, 0.9, 0.95]
+  time_bins_sec: [[240,300],[180,240],[120,180],[60,120],[30,60],[0,30]]
+  delta_z_bins: [[-999,-2],[-2,-1],[-1,-0.5],[-0.5,0.5],[0.5,1],[1,2],[2,999]]
+  min_cell_n: 25
+
+execution:
+  sizes: [1,5,10]
+  execution_mode: taker
+  max_concurrent_positions: 1
+
+costs:
+  taker_fee_bps: 10
+  maker_fee_bps: 0
+  claim_cost_usd: 0.0
+  settlement_cost_usd: 0.0
+  gas_cost_usd: 0.0
+  proxy_slippage_bps: 30
+  failed_fill_haircut: 0.15
+
+sensitivity:
+  optimistic_slippage_bps: 10
+  realistic_slippage_bps: 30
+  pessimistic_slippage_bps: 70
+
+sequential:
+  uncertainty_bootstrap_days: 300
+  insufficient_n: 25
+
+credentials:
+  cmc_api_key_env: "CMC_API_KEY"
+  cmc_api_key_fallback: "54b0a95519ea4751bb02a13566d74b52"

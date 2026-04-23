@@ -1,0 +1,166 @@
+{
+  "stage1": {
+    "stage": 1,
+    "generated_utc": "2026-04-23T04:33:43+00:00",
+    "sources": {
+      "polymarket_markets": {
+        "url": "https://gamma-api.polymarket.com/markets",
+        "params": {
+          "limit": 1000,
+          "offset": 0,
+          "active": false,
+          "closed": true,
+          "archived": false
+        },
+        "status": "unavailable",
+        "error": "URLError: <urlopen error Tunnel connection failed: 403 Forbidden>",
+        "sample_size": 0,
+        "provisional": true
+      },
+      "chainlink_btc_stream": {
+        "url": "https://data.chain.link/feeds",
+        "params": {
+          "network": "ethereum",
+          "asset": "BTC",
+          "format": "json"
+        },
+        "status": "unavailable",
+        "error": "URLError: <urlopen error Tunnel connection failed: 403 Forbidden>",
+        "sample_size": 0,
+        "provisional": true
+      },
+      "coinbase_btc_candles": {
+        "url": "https://api.exchange.coinbase.com/products/BTC-USD/candles",
+        "params": {
+          "granularity": 60,
+          "start": "2025-01-01T00:00:00Z",
+          "end": "2025-01-02T00:00:00Z"
+        },
+        "status": "unavailable",
+        "error": "URLError: <urlopen error Tunnel connection failed: 403 Forbidden>",
+        "sample_size": 0,
+        "provisional": true
+      },
+      "cmc_fear_greed_latest": {
+        "url": "https://pro-api.coinmarketcap.com/v3/fear-and-greed/latest",
+        "params": {
+          "convert": "USD"
+        },
+        "status": "unavailable",
+        "error": "URLError: <urlopen error Tunnel connection failed: 403 Forbidden>",
+        "sample_size": 0,
+        "provisional": true
+      },
+      "cmc_fear_greed_historical": {
+        "url": "https://pro-api.coinmarketcap.com/v3/fear-and-greed/historical",
+        "params": {
+          "limit": 5000,
+          "start": 1
+        },
+        "status": "unavailable",
+        "error": "URLError: <urlopen error Tunnel connection failed: 403 Forbidden>",
+        "sample_size": 0,
+        "provisional": true
+      },
+      "pmxt_orderbooks": {
+        "url": "https://api.pmxt.io/v1/polymarket/orderbooks",
+        "params": {
+          "symbol": "BTC",
+          "interval": "1h",
+          "limit": 500
+        },
+        "status": "unavailable",
+        "error": "URLError: <urlopen error Tunnel connection failed: 403 Forbidden>",
+        "sample_size": 0,
+        "provisional": true
+      }
+    }
+  },
+  "stage2": {
+    "kept": 0,
+    "rejected": 0
+  },
+  "stage3": {
+    "panel_rows": 0,
+    "execution_tier": "C",
+    "provisional": true
+  },
+  "stage4": {
+    "stage": 4,
+    "unsmoothed_cells": [],
+    "smoothed_cells": [],
+    "calibration": [],
+    "note": "INSUFFICIENT DATA: no usable historical state prices from APIs in this environment.",
+    "provisional": true
+  },
+  "stage5": {
+    "stage": 5,
+    "rows": [
+      {
+        "size": 1,
+        "tier": "C",
+        "immediate_exit_prob": null,
+        "future_exit_prob": null,
+        "provisional": true,
+        "note": "Trade/history-only proxy unavailable due missing trade history ingestion."
+      },
+      {
+        "size": 5,
+        "tier": "C",
+        "immediate_exit_prob": null,
+        "future_exit_prob": null,
+        "provisional": true,
+        "note": "Trade/history-only proxy unavailable due missing trade history ingestion."
+      },
+      {
+        "size": 10,
+        "tier": "C",
+        "immediate_exit_prob": null,
+        "future_exit_prob": null,
+        "provisional": true,
+        "note": "Trade/history-only proxy unavailable due missing trade history ingestion."
+      }
+    ],
+    "provisional": true
+  },
+  "stage6": {
+    "stage": 6,
+    "states": [],
+    "validation_backtest": {
+      "status": "unavailable",
+      "reason": "No transition probabilities estimable with current data coverage",
+      "provisional": true
+    }
+  },
+  "stage7": {
+    "stage": 7,
+    "windows": [
+      "earliest",
+      "middle",
+      "recent"
+    ],
+    "drift": [],
+    "equal_weight_vs_recency": "unavailable",
+    "provisional": true
+  },
+  "stage8": {
+    "stage": 8,
+    "confirmatory_tests": [],
+    "exploratory_tests": [],
+    "multiple_testing": "benjamini_hochberg_fdr",
+    "status": "unavailable",
+    "reason": "No validation outcomes estimable"
+  },
+  "stage9_10": {
+    "stage9_test_pass": {
+      "status": "single_pass_completed",
+      "result": "no_actionable_cells",
+      "provisional": true
+    },
+    "stage10_post_edge_extension": {
+      "status": "skipped",
+      "reason": "No robust out-of-sample edge survived realistic-cost test"
+    },
+    "final_conclusion": "no robust edge found"
+  }
+}

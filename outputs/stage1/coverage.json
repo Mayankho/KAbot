@@ -1,0 +1,77 @@
+{
+  "stage": 1,
+  "generated_utc": "2026-04-23T04:33:43+00:00",
+  "sources": {
+    "polymarket_markets": {
+      "url": "https://gamma-api.polymarket.com/markets",
+      "params": {
+        "limit": 1000,
+        "offset": 0,
+        "active": false,
+        "closed": true,
+        "archived": false
+      },
+      "status": "unavailable",
+      "error": "URLError: <urlopen error Tunnel connection failed: 403 Forbidden>",
+      "sample_size": 0,
+      "provisional": true
+    },
+    "chainlink_btc_stream": {
+      "url": "https://data.chain.link/feeds",
+      "params": {
+        "network": "ethereum",
+        "asset": "BTC",
+        "format": "json"
+      },
+      "status": "unavailable",
+      "error": "URLError: <urlopen error Tunnel connection failed: 403 Forbidden>",
+      "sample_size": 0,
+      "provisional": true
+    },
+    "coinbase_btc_candles": {
+      "url": "https://api.exchange.coinbase.com/products/BTC-USD/candles",
+      "params": {
+        "granularity": 60,
+        "start": "2025-01-01T00:00:00Z",
+        "end": "2025-01-02T00:00:00Z"
+      },
+      "status": "unavailable",
+      "error": "URLError: <urlopen error Tunnel connection failed: 403 Forbidden>",
+      "sample_size": 0,
+      "provisional": true
+    },
+    "cmc_fear_greed_latest": {
+      "url": "https://pro-api.coinmarketcap.com/v3/fear-and-greed/latest",
+      "params": {
+        "convert": "USD"
+      },
+      "status": "unavailable",
+      "error": "URLError: <urlopen error Tunnel connection failed: 403 Forbidden>",
+      "sample_size": 0,
+      "provisional": true
+    },
+    "cmc_fear_greed_historical": {
+      "url": "https://pro-api.coinmarketcap.com/v3/fear-and-greed/historical",
+      "params": {
+        "limit": 5000,
+        "start": 1
+      },
+      "status": "unavailable",
+      "error": "URLError: <urlopen error Tunnel connection failed: 403 Forbidden>",
+      "sample_size": 0,
+      "provisional": true
+    },
+    "pmxt_orderbooks": {
+      "url": "https://api.pmxt.io/v1/polymarket/orderbooks",
+      "params": {
+        "symbol": "BTC",
+        "interval": "1h",
+        "limit": 500
+      },
+      "status": "unavailable",
+      "error": "URLError: <urlopen error Tunnel connection failed: 403 Forbidden>",
+      "sample_size": 0,
+      "provisional": true
+    }
+  }
+}

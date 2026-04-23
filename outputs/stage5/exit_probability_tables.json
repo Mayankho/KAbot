@@ -1,0 +1,30 @@
+{
+  "stage": 5,
+  "rows": [
+    {
+      "size": 1,
+      "tier": "C",
+      "immediate_exit_prob": null,
+      "future_exit_prob": null,
+      "provisional": true,
+      "note": "Trade/history-only proxy unavailable due missing trade history ingestion."
+    },
+    {
+      "size": 5,
+      "tier": "C",
+      "immediate_exit_prob": null,
+      "future_exit_prob": null,
+      "provisional": true,
+      "note": "Trade/history-only proxy unavailable due missing trade history ingestion."
+    },
+    {
+      "size": 10,
+      "tier": "C",
+      "immediate_exit_prob": null,
+      "future_exit_prob": null,
+      "provisional": true,
+      "note": "Trade/history-only proxy unavailable due missing trade history ingestion."
+    }
+  ],
+  "provisional": true
+}

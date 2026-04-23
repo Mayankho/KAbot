@@ -1,0 +1,6 @@
+{
+  "status": "unavailable",
+  "reason": "pyarrow/fastparquet unavailable in environment; wrote JSONL fallback instead",
+  "fallback": "outputs/stage3/canonical_state_panel.jsonl",
+  "generated_utc": "2026-04-23T04:33:43.808681+00:00"
+}

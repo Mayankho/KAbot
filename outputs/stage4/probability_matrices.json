@@ -1,0 +1,8 @@
+{
+  "stage": 4,
+  "unsmoothed_cells": [],
+  "smoothed_cells": [],
+  "calibration": [],
+  "note": "INSUFFICIENT DATA: no usable historical state prices from APIs in this environment.",
+  "provisional": true
+}

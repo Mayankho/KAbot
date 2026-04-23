@@ -1,0 +1,12 @@
+{
+  "stage9_test_pass": {
+    "status": "single_pass_completed",
+    "result": "no_actionable_cells",
+    "provisional": true
+  },
+  "stage10_post_edge_extension": {
+    "status": "skipped",
+    "reason": "No robust out-of-sample edge survived realistic-cost test"
+  },
+  "final_conclusion": "no robust edge found"
+}

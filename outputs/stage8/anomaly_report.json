@@ -1,0 +1,8 @@
+{
+  "stage": 8,
+  "confirmatory_tests": [],
+  "exploratory_tests": [],
+  "multiple_testing": "benjamini_hochberg_fdr",
+  "status": "unavailable",
+  "reason": "No validation outcomes estimable"
+}

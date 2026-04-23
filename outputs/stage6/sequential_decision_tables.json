@@ -1,0 +1,9 @@
+{
+  "stage": 6,
+  "states": [],
+  "validation_backtest": {
+    "status": "unavailable",
+    "reason": "No transition probabilities estimable with current data coverage",
+    "provisional": true
+  }
+}

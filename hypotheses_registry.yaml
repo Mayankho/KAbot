@@ -1,0 +1,32 @@
+registry_created_before_validation: true
+created_utc: "2026-04-23T00:00:00Z"
+families:
+  - id: A
+    name: low_liquidity_anomalies
+    tests:
+      - id: A1
+        hypothesis: "Conditional YES-resolution overpricing is larger in lowest-liquidity tercile than highest-liquidity tercile."
+        metric: "probability_gap_structural"
+      - id: A2
+        hypothesis: "Exit success proxy drops materially in lowest-liquidity tercile."
+        metric: "exit_success_proxy"
+  - id: B
+    name: regime_specific_asymmetries
+    tests:
+      - id: B1
+        hypothesis: "Calibration error differs by macro fear/greed regime."
+        metric: "calibration_gap"
+  - id: C
+    name: behavioral_retail_flow_signatures
+    tests:
+      - id: C1
+        hypothesis: "Display-price-vs-mid divergence predicts reversal frequency."
+        metric: "display_mid_gap_reversal"
+  - id: D
+    name: exit_timing_edges
+    tests:
+      - id: D1
+        hypothesis: "WAIT_ONE_BUCKET exceeds SELL_NOW EV in specific late-bucket states."
+        metric: "ev_wait_minus_sell"
+correction_method: "benjamini_hochberg_fdr"
+notes: "Any post-validation hypothesis added to exploratory_log.yaml only."
