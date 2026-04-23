@@ -1,0 +1,11 @@
+{
+  "stage": 7,
+  "windows": [
+    "earliest",
+    "middle",
+    "recent"
+  ],
+  "drift": [],
+  "equal_weight_vs_recency": "unavailable",
+  "provisional": true
+}
